@@ -154,7 +154,7 @@ function Index() {
         <SectionTag n="01" label="hero — the thesis | gradation rule" />
 
         {/* 02 CAPACITY BAR */}
-        <section className="grid grid-cols-2 gap-6 border-y border-rule py-10 md:grid-cols-4 md:py-12">
+        <section className="reveal grid grid-cols-2 gap-6 border-y border-rule py-10 md:grid-cols-4 md:py-12">
           {capacityFigures.map((f) => (
             <div key={f.label}>
               <div className="flex items-baseline gap-2">
@@ -168,7 +168,7 @@ function Index() {
         <SectionTag n="02" label="capacity bar — the proof (mono figures)" />
 
         {/* 03 PRODUCTS */}
-        <section id="products" className="py-14">
+        <section id="products" className="reveal py-14">
           <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
             <h2 className="display max-w-xl text-3xl md:text-5xl">
               Granite by gradation — <span className="text-primary">six standards.</span>
@@ -193,7 +193,7 @@ function Index() {
         <SectionTag n="03" label="products — granite by gradation (6 cards)" />
 
         {/* 04 WHY MERCIFUL */}
-        <section className="py-14">
+        <section className="reveal py-14">
           <h2 className="display max-w-2xl text-3xl md:text-5xl">
             Four pillars behind every tonne we dispatch.
           </h2>
@@ -212,7 +212,7 @@ function Index() {
         <SectionTag n="04" label="why merciful — 4 pillars" />
 
         {/* 05 OPERATIONS */}
-        <section id="operations" className="py-14">
+        <section id="operations" className="reveal py-14">
           <div className="grid gap-10 md:grid-cols-[1.1fr_1fr] md:items-center">
             <div>
               <h2 className="display text-3xl md:text-5xl">
@@ -244,7 +244,7 @@ function Index() {
         <SectionTag n="05" label="operations & logistics — process + image" />
 
         {/* 06 BUYERS */}
-        <section className="py-14">
+        <section className="reveal py-14">
           <h2 className="display max-w-xl text-3xl md:text-5xl">Who we supply.</h2>
           <div className="mt-10 grid gap-px bg-rule md:grid-cols-4">
             {buyers.map((b) => (
@@ -258,7 +258,7 @@ function Index() {
         <SectionTag n="06" label="who we supply — buyer segments" />
 
         {/* 07 QUALITY */}
-        <section id="quality" className="py-14">
+        <section id="quality" className="reveal py-14">
           <h2 className="display max-w-2xl text-3xl md:text-5xl">Quality & certification.</h2>
           <p className="mt-4 max-w-xl text-sm text-ink-soft">
             We operate under licensed mineral title and document compliance at every stage. Test certificates available
@@ -278,7 +278,7 @@ function Index() {
         <SectionTag n="07" label="quality & certification" />
 
         {/* 08 QUOTE */}
-        <section id="quote" className="py-16">
+        <section id="quote" className="reveal py-16">
           <div className="grid gap-10 md:grid-cols-[1fr_1.1fr] md:gap-16">
             <div>
               <h2 className="display text-3xl md:text-5xl">
