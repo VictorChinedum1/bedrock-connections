@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import heroImg from "@/assets/quarry-hero.jpg";
 import plantImg from "@/assets/quarry-plant.jpg";
+import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -71,6 +72,7 @@ function SectionTag({ n, label }: { n: string; label: string }) {
 }
 
 function Index() {
+  useReveal();
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* HEADER */}
@@ -96,51 +98,63 @@ function Index() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-[1200px] px-6">
-        {/* 00 spacer label like wireframe (we use 01 for hero) */}
-
-        {/* 01 HERO */}
-        <section className="pt-12 pb-10 md:pt-16 md:pb-14">
-          <div className="grid gap-10 md:grid-cols-[1.1fr_1fr] md:gap-12">
-            <div className="flex flex-col">
-              <p className="mono text-xs text-ink-soft">Ilara-Mokin · Ondo State · Est. operations</p>
-              <h1 className="display mt-6 text-[44px] md:text-[68px]">
-                Granite, graded
-                <br />
-                <span className="text-primary">to specification.</span>
-              </h1>
-              <p className="mt-6 max-w-[44ch] text-base text-ink-soft md:text-lg">
-                Merciful Natural Resources Limited produces half-a-million metric tons of granite aggregates a year —
-                consistent, dispatched on time, and built for the projects that don't tolerate variance.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#quote" className="inline-flex items-center gap-2 bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90">
-                  Request a quote <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="#products" className="inline-flex items-center gap-2 border border-foreground px-5 py-3 text-sm font-medium transition-colors hover:bg-foreground hover:text-background">
-                  View product range
-                </a>
-              </div>
-            </div>
-            <div className="relative">
-              <img
-                src={heroImg}
-                alt="Aerial view of Merciful Quarry's granite operation at Ilara-Mokin"
-                width={1600}
-                height={1200}
-                className="aspect-[5/4] w-full object-cover"
-              />
-              <div className="mono absolute bottom-3 left-3 bg-background/90 px-2 py-1 text-[10px] text-ink-soft">
-                MQ–01 · Ilara-Mokin pit
-              </div>
-            </div>
+      {/* 01 HERO — full-bleed video */}
+      <section className="relative isolate -mt-[1px] h-[88vh] min-h-[600px] w-full overflow-hidden bg-foreground text-background">
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={heroImg}
+        >
+          <source
+            src="https://videos.pexels.com/video-files/2491284/2491284-hd_1920_1080_30fps.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-foreground/70 via-foreground/55 to-foreground/85" />
+        <div className="relative mx-auto flex h-full max-w-[1200px] flex-col justify-end px-6 pb-16 pt-28">
+          <p className="mono reveal text-xs text-background/70">
+            Ilara-Mokin · Ondo State · Est. operations
+          </p>
+          <h1 className="display reveal mt-6 max-w-[18ch] text-[44px] leading-[1.02] text-background md:text-[88px]">
+            Granite, graded
+            <br />
+            to specification.
+          </h1>
+          <p className="reveal mt-6 max-w-[52ch] text-base text-background/80 md:text-lg">
+            Merciful Natural Resources Limited produces half-a-million metric tons of granite
+            aggregates a year — consistent, dispatched on time, and built for the projects that
+            don't tolerate variance.
+          </p>
+          <div className="reveal mt-10 flex flex-wrap gap-3">
+            <a
+              href="#quote"
+              className="inline-flex items-center gap-2 bg-background px-5 py-3 text-sm font-medium text-foreground transition-opacity hover:opacity-90"
+            >
+              Request a quote <ArrowRight className="h-4 w-4" />
+            </a>
+            <a
+              href="#products"
+              className="inline-flex items-center gap-2 border border-background/70 px-5 py-3 text-sm font-medium text-background transition-colors hover:bg-background hover:text-foreground"
+            >
+              View product range
+            </a>
           </div>
-          <div className="tick-rule mt-12" />
-        </section>
+          <div className="mono absolute bottom-4 right-6 bg-background/15 px-2 py-1 text-[10px] text-background/80 backdrop-blur">
+            MQ–01 · Ilara-Mokin pit
+          </div>
+        </div>
+      </section>
+
+      <main className="mx-auto max-w-[1200px] px-6">
+        <div className="tick-rule mt-10" />
         <SectionTag n="01" label="hero — the thesis | gradation rule" />
 
         {/* 02 CAPACITY BAR */}
-        <section className="grid grid-cols-2 gap-6 border-y border-rule py-10 md:grid-cols-4 md:py-12">
+        <section className="reveal grid grid-cols-2 gap-6 border-y border-rule py-10 md:grid-cols-4 md:py-12">
           {capacityFigures.map((f) => (
             <div key={f.label}>
               <div className="flex items-baseline gap-2">
@@ -154,7 +168,7 @@ function Index() {
         <SectionTag n="02" label="capacity bar — the proof (mono figures)" />
 
         {/* 03 PRODUCTS */}
-        <section id="products" className="py-14">
+        <section id="products" className="reveal py-14">
           <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
             <h2 className="display max-w-xl text-3xl md:text-5xl">
               Granite by gradation — <span className="text-primary">six standards.</span>
@@ -179,7 +193,7 @@ function Index() {
         <SectionTag n="03" label="products — granite by gradation (6 cards)" />
 
         {/* 04 WHY MERCIFUL */}
-        <section className="py-14">
+        <section className="reveal py-14">
           <h2 className="display max-w-2xl text-3xl md:text-5xl">
             Four pillars behind every tonne we dispatch.
           </h2>
@@ -198,7 +212,7 @@ function Index() {
         <SectionTag n="04" label="why merciful — 4 pillars" />
 
         {/* 05 OPERATIONS */}
-        <section id="operations" className="py-14">
+        <section id="operations" className="reveal py-14">
           <div className="grid gap-10 md:grid-cols-[1.1fr_1fr] md:items-center">
             <div>
               <h2 className="display text-3xl md:text-5xl">
@@ -230,7 +244,7 @@ function Index() {
         <SectionTag n="05" label="operations & logistics — process + image" />
 
         {/* 06 BUYERS */}
-        <section className="py-14">
+        <section className="reveal py-14">
           <h2 className="display max-w-xl text-3xl md:text-5xl">Who we supply.</h2>
           <div className="mt-10 grid gap-px bg-rule md:grid-cols-4">
             {buyers.map((b) => (
@@ -244,7 +258,7 @@ function Index() {
         <SectionTag n="06" label="who we supply — buyer segments" />
 
         {/* 07 QUALITY */}
-        <section id="quality" className="py-14">
+        <section id="quality" className="reveal py-14">
           <h2 className="display max-w-2xl text-3xl md:text-5xl">Quality & certification.</h2>
           <p className="mt-4 max-w-xl text-sm text-ink-soft">
             We operate under licensed mineral title and document compliance at every stage. Test certificates available
@@ -264,7 +278,7 @@ function Index() {
         <SectionTag n="07" label="quality & certification" />
 
         {/* 08 QUOTE */}
-        <section id="quote" className="py-16">
+        <section id="quote" className="reveal py-16">
           <div className="grid gap-10 md:grid-cols-[1fr_1.1fr] md:gap-16">
             <div>
               <h2 className="display text-3xl md:text-5xl">
