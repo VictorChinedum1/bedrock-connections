@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Quote } from "lucide-react";
 import heroImg from "@/assets/quarry-hero.jpg";
 import plantImg from "@/assets/quarry-plant.jpg";
 import { useReveal } from "@/hooks/use-reveal";
@@ -20,14 +20,8 @@ const navLinks = [
   { label: "Products", href: "#products" },
   { label: "Operations", href: "#operations" },
   { label: "Quality", href: "#quality" },
+  { label: "Reviews", href: "#reviews" },
   { label: "Contact", href: "#quote" },
-];
-
-const capacityFigures = [
-  { value: "500,000", unit: "MT / yr", label: "Production capacity" },
-  { value: "50+", unit: "team", label: "On-site workforce" },
-  { value: "6", unit: "grades", label: "Granite gradations" },
-  { value: "24 / 7", unit: "ops", label: "Loading & dispatch" },
 ];
 
 const products = [
@@ -59,6 +53,24 @@ const certs = [
   "Mineral title — Federal Ministry of Mines & Steel Development",
   "Environmental compliance — NESREA registered operations",
   "Material conformance — tested to Nigerian Industrial Standards (NIS)",
+];
+
+const reviews = [
+  {
+    quote: "Merciful Quarry has been our go-to aggregate partner for three years. The gradation is consistent, dispatch is on schedule, and their team understands ready-mix deadlines.",
+    author: "Engr. Dare Adeyemi",
+    role: "Operations Manager, Western Concrete Ltd.",
+  },
+  {
+    quote: "On a 14-kilometer road rehabilitation project, they kept us loaded through the rainy season. That kind of reliability is rare in this business.",
+    author: "Mr. Paul Ojo",
+    role: "Project Supervisor, Ondo State Roadworks",
+  },
+  {
+    quote: "As a small builder, I appreciate that they still take my orders seriously. Clean aggregate, fair price, and the trucks arrive when promised.",
+    author: "Mrs. Amina Bello",
+    role: "Independent Contractor, Akure",
+  },
 ];
 
 function SectionTag({ n, label }: { n: string; label: string }) {
@@ -153,46 +165,7 @@ function Index() {
         <div className="tick-rule mt-10" />
         <SectionTag n="01" label="hero — the thesis | gradation rule" />
 
-        {/* 02 CAPACITY BAR */}
-        <section className="reveal grid grid-cols-2 gap-6 border-y border-rule py-10 md:grid-cols-4 md:py-12">
-          {capacityFigures.map((f) => (
-            <div key={f.label}>
-              <div className="flex items-baseline gap-2">
-                <span className="display text-4xl md:text-5xl">{f.value}</span>
-                <span className="mono text-xs text-ink-soft">{f.unit}</span>
-              </div>
-              <p className="mono mt-2 text-[11px] uppercase tracking-wider text-ink-soft">{f.label}</p>
-            </div>
-          ))}
-        </section>
-        <SectionTag n="02" label="capacity bar — the proof (mono figures)" />
-
-        {/* 03 PRODUCTS */}
-        <section id="products" className="reveal py-14">
-          <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
-            <h2 className="display max-w-xl text-3xl md:text-5xl">
-              Granite by gradation — <span className="text-primary">six standards.</span>
-            </h2>
-            <p className="max-w-sm text-sm text-ink-soft">
-              Each grade is crushed, screened and stockpiled separately. Specify the size; we deliver it clean.
-            </p>
-          </div>
-          <div className="grid gap-px bg-rule md:grid-cols-3">
-            {products.map((p) => (
-              <article key={p.title} className="group bg-background p-6 transition-colors hover:bg-surface">
-                <div className="flex items-start justify-between">
-                  <span className="mono text-xs text-primary">{p.code}</span>
-                  <ArrowUpRight className="h-4 w-4 text-ink-soft transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </div>
-                <h3 className="display mt-8 text-2xl">{p.title}</h3>
-                <p className="mt-3 text-sm text-ink-soft">{p.desc}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-        <SectionTag n="03" label="products — granite by gradation (6 cards)" />
-
-        {/* 04 WHY MERCIFUL */}
+        {/* 02 WHY MERCIFUL */}
         <section className="reveal py-14">
           <h2 className="display max-w-2xl text-3xl md:text-5xl">
             Four pillars behind every tonne we dispatch.
@@ -209,9 +182,9 @@ function Index() {
             ))}
           </div>
         </section>
-        <SectionTag n="04" label="why merciful — 4 pillars" />
+        <SectionTag n="02" label="why merciful — 4 pillars" />
 
-        {/* 05 OPERATIONS */}
+        {/* 03 OPERATIONS */}
         <section id="operations" className="reveal py-14">
           <div className="grid gap-10 md:grid-cols-[1.1fr_1fr] md:items-center">
             <div>
@@ -241,9 +214,9 @@ function Index() {
             />
           </div>
         </section>
-        <SectionTag n="05" label="operations & logistics — process + image" />
+        <SectionTag n="03" label="operations & logistics — process + image" />
 
-        {/* 06 BUYERS */}
+        {/* 04 BUYERS */}
         <section className="reveal py-14">
           <h2 className="display max-w-xl text-3xl md:text-5xl">Who we supply.</h2>
           <div className="mt-10 grid gap-px bg-rule md:grid-cols-4">
@@ -255,9 +228,9 @@ function Index() {
             ))}
           </div>
         </section>
-        <SectionTag n="06" label="who we supply — buyer segments" />
+        <SectionTag n="04" label="who we supply — buyer segments" />
 
-        {/* 07 QUALITY */}
+        {/* 05 QUALITY */}
         <section id="quality" className="reveal py-14">
           <h2 className="display max-w-2xl text-3xl md:text-5xl">Quality & certification.</h2>
           <p className="mt-4 max-w-xl text-sm text-ink-soft">
@@ -275,9 +248,9 @@ function Index() {
             ))}
           </div>
         </section>
-        <SectionTag n="07" label="quality & certification" />
+        <SectionTag n="05" label="quality & certification" />
 
-        {/* 08 QUOTE */}
+        {/* 06 QUOTE */}
         <section id="quote" className="reveal py-16">
           <div className="grid gap-10 md:grid-cols-[1fr_1.1fr] md:gap-16">
             <div>
@@ -325,7 +298,52 @@ function Index() {
             </form>
           </div>
         </section>
-        <SectionTag n="08" label="request a quote — the conversion" />
+        <SectionTag n="06" label="request a quote — the conversion" />
+
+        {/* 07 CLIENT REVIEWS */}
+        <section id="reviews" className="reveal py-16">
+          <h2 className="display max-w-xl text-3xl md:text-5xl">What our clients say.</h2>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {reviews.map((r) => (
+              <div key={r.author} className="flex flex-col justify-between border border-rule bg-surface p-6 md:p-8">
+                <div>
+                  <Quote className="h-6 w-6 text-primary/60" />
+                  <p className="mt-4 text-base leading-relaxed text-ink">{r.quote}</p>
+                </div>
+                <div className="mt-8">
+                  <p className="text-sm font-semibold">{r.author}</p>
+                  <p className="text-xs text-ink-soft">{r.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+        <SectionTag n="07" label="client reviews — trusted supply partners" />
+
+        {/* 08 PRODUCTS */}
+        <section id="products" className="reveal py-14">
+          <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+            <h2 className="display max-w-xl text-3xl md:text-5xl">
+              Granite by gradation — <span className="text-primary">six standards.</span>
+            </h2>
+            <p className="max-w-sm text-sm text-ink-soft">
+              Each grade is crushed, screened and stockpiled separately. Specify the size; we deliver it clean.
+            </p>
+          </div>
+          <div className="grid gap-px bg-rule md:grid-cols-3">
+            {products.map((p) => (
+              <article key={p.title} className="group bg-background p-6 transition-colors hover:bg-surface">
+                <div className="flex items-start justify-between">
+                  <span className="mono text-xs text-primary">{p.code}</span>
+                  <ArrowUpRight className="h-4 w-4 text-ink-soft transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </div>
+                <h3 className="display mt-8 text-2xl">{p.title}</h3>
+                <p className="mt-3 text-sm text-ink-soft">{p.desc}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+        <SectionTag n="08" label="products — granite by gradation (6 cards)" />
 
         {/* 09 FOOTER */}
         <footer className="grid gap-10 py-14 md:grid-cols-4">
