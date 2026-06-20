@@ -149,7 +149,7 @@ function Index() {
         </div>
       </section>
 
-      <main className="mx-auto max-w-[1200px] px-6">
+      <main className="mx-auto max-w-[1200px] px-6 font-serif">
         <div className="tick-rule mt-10" />
         <SectionTag n="01" label="hero — the thesis | gradation rule" />
 
