@@ -36,6 +36,7 @@
 
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Instrument Serif", "Times New Roman", serif;
+  --font-serif: "Crimson Text", "Georgia", serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
 }
 
@@ -97,5 +98,17 @@
   .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  main.font-serif .display,
+  main.font-serif h2,
+  main.font-serif h3 {
+    font-family: var(--font-serif);
+  }
+  main.font-serif input,
+  main.font-serif textarea,
+  main.font-serif button,
+  main.font-serif .font-sans {
+    font-family: var(--font-sans);
   }
 }
