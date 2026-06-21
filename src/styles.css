@@ -66,13 +66,6 @@
 }
 
 @layer components {
-  .section-label {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.04em;
-    color: var(--ink-soft);
-    text-transform: lowercase;
-  }
   .display {
     font-family: var(--font-display);
     font-weight: 400;
@@ -80,14 +73,6 @@
     line-height: 1.02;
   }
   .mono { font-family: var(--font-mono); }
-  .tick-rule {
-    background-image: repeating-linear-gradient(
-      to right,
-      var(--ink) 0 1px,
-      transparent 1px 28px
-    );
-    height: 10px;
-  }
   .reveal {
     opacity: 0;
     transform: translateY(28px);
