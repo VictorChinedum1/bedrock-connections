@@ -181,7 +181,7 @@ function Index() {
             ))}
           </div>
         </section>
-        <SectionTag n="02" label="why merciful — 4 pillars" />
+        
 
         {/* 03 OPERATIONS */}
         <section id="operations" className="reveal py-14">
@@ -213,7 +213,7 @@ function Index() {
             />
           </div>
         </section>
-        <SectionTag n="03" label="operations & logistics — process + image" />
+        
 
         {/* 04 BUYERS */}
         <section className="reveal py-14">
@@ -227,7 +227,7 @@ function Index() {
             ))}
           </div>
         </section>
-        <SectionTag n="04" label="who we supply — buyer segments" />
+        
 
         {/* 05 QUARRY IN MOTION */}
         <section className="reveal relative isolate left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-foreground text-background">
@@ -253,7 +253,7 @@ function Index() {
             </div>
           </div>
         </section>
-        <SectionTag n="05" label="quarry in motion — background footage" />
+        
 
         {/* 06 QUALITY */}
         <section id="quality" className="reveal py-14">
@@ -273,7 +273,7 @@ function Index() {
             ))}
           </div>
         </section>
-        <SectionTag n="06" label="quality & certification" />
+        
 
         {/* 07 QUOTE */}
         <section id="quote" className="reveal py-16">
@@ -323,7 +323,7 @@ function Index() {
             </form>
           </div>
         </section>
-        <SectionTag n="07" label="request a quote — the conversion" />
+        
 
         {/* 08 CLIENT REVIEWS */}
         <section id="reviews" className="reveal py-16">
@@ -343,7 +343,7 @@ function Index() {
             ))}
           </div>
         </section>
-        <SectionTag n="08" label="client reviews — trusted supply partners" />
+        
 
         {/* 09 PRODUCTS */}
         <section id="products" className="reveal py-14">
@@ -368,7 +368,7 @@ function Index() {
             ))}
           </div>
         </section>
-        <SectionTag n="09" label="products — granite by gradation (6 cards)" />
+        
 
         {/* 10 FOOTER */}
         <footer className="grid gap-10 py-14 md:grid-cols-4">
@@ -404,7 +404,7 @@ function Index() {
             </div>
           </div>
         </footer>
-        <SectionTag n="10" label="footer — contact & trust" />
+        
       </main>
     </div>
   );
