@@ -74,15 +74,6 @@ const reviews = [
   },
 ];
 
-function SectionTag({ n, label }: { n: string; label: string }) {
-  return (
-    <div className="border-t border-rule">
-      <p className="section-label py-3">
-        {n} · {label}
-      </p>
-    </div>
-  );
-}
 
 function Index() {
   useReveal();
