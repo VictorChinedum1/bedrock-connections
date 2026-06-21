@@ -257,7 +257,7 @@ function Index() {
         </section>
         <SectionTag n="05" label="quarry in motion — background footage" />
 
-        {/* 05 QUALITY */}
+        {/* 06 QUALITY */}
         <section id="quality" className="reveal py-14">
           <h2 className="display max-w-2xl text-3xl md:text-5xl">Quality & certification.</h2>
           <p className="mt-4 max-w-xl text-sm text-ink-soft">
@@ -277,7 +277,7 @@ function Index() {
         </section>
         <SectionTag n="06" label="quality & certification" />
 
-        {/* 06 QUOTE */}
+        {/* 07 QUOTE */}
         <section id="quote" className="reveal py-16">
           <div className="grid gap-10 md:grid-cols-[1fr_1.1fr] md:gap-16">
             <div>
@@ -327,7 +327,7 @@ function Index() {
         </section>
         <SectionTag n="07" label="request a quote — the conversion" />
 
-        {/* 07 CLIENT REVIEWS */}
+        {/* 08 CLIENT REVIEWS */}
         <section id="reviews" className="reveal py-16">
           <h2 className="display max-w-xl text-3xl md:text-5xl">What our clients say.</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -347,7 +347,7 @@ function Index() {
         </section>
         <SectionTag n="08" label="client reviews — trusted supply partners" />
 
-        {/* 08 PRODUCTS */}
+        {/* 09 PRODUCTS */}
         <section id="products" className="reveal py-14">
           <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
             <h2 className="display max-w-xl text-3xl md:text-5xl">
@@ -372,7 +372,7 @@ function Index() {
         </section>
         <SectionTag n="09" label="products — granite by gradation (6 cards)" />
 
-        {/* 09 FOOTER */}
+        {/* 10 FOOTER */}
         <footer className="grid gap-10 py-14 md:grid-cols-4">
           <div>
             <div className="flex items-center gap-2">
