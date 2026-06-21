@@ -231,6 +231,32 @@ function Index() {
         </section>
         <SectionTag n="04" label="who we supply — buyer segments" />
 
+        {/* 05 QUARRY IN MOTION */}
+        <section className="reveal relative isolate left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-foreground text-background">
+          <div className="h-[60vh] min-h-[420px] w-full">
+            <video
+              className="absolute inset-0 h-full w-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+            >
+              <source src={cropVideo.url} type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/40 to-foreground/60" />
+            <div className="relative mx-auto flex h-full max-w-[1200px] items-end px-6 pb-12">
+              <div className="max-w-xl">
+                <p className="mono text-xs uppercase tracking-widest text-background/70">Quarry in motion</p>
+                <h2 className="display mt-4 text-3xl leading-tight md:text-5xl">
+                  Bedrock to baseline. Every blast, every load.
+                </h2>
+              </div>
+            </div>
+          </div>
+        </section>
+        <SectionTag n="05" label="quarry in motion — background footage" />
+
         {/* 05 QUALITY */}
         <section id="quality" className="reveal py-14">
           <h2 className="display max-w-2xl text-3xl md:text-5xl">Quality & certification.</h2>
