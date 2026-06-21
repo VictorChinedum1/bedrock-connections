@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Check, Quote } from "lucide-react";
 import heroImg from "@/assets/quarry-hero.jpg";
 import plantImg from "@/assets/quarry-plant.jpg";
+import cropVideo from "@/assets/crop1.mp4.asset.json";
 import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
@@ -86,7 +87,7 @@ function SectionTag({ n, label }: { n: string; label: string }) {
 function Index() {
   useReveal();
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
       {/* HEADER */}
       <header className="sticky top-0 z-50 border-b border-rule bg-background/85 backdrop-blur">
         <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
@@ -230,7 +231,33 @@ function Index() {
         </section>
         <SectionTag n="04" label="who we supply — buyer segments" />
 
-        {/* 05 QUALITY */}
+        {/* 05 QUARRY IN MOTION */}
+        <section className="reveal relative isolate left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-foreground text-background">
+          <div className="h-[60vh] min-h-[420px] w-full">
+            <video
+              className="absolute inset-0 h-full w-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+            >
+              <source src={cropVideo.url} type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/40 to-foreground/60" />
+            <div className="relative mx-auto flex h-full max-w-[1200px] items-end px-6 pb-12">
+              <div className="max-w-xl">
+                <p className="mono text-xs uppercase tracking-widest text-background/70">Quarry in motion</p>
+                <h2 className="display mt-4 text-3xl leading-tight md:text-5xl">
+                  Bedrock to baseline. Every blast, every load.
+                </h2>
+              </div>
+            </div>
+          </div>
+        </section>
+        <SectionTag n="05" label="quarry in motion — background footage" />
+
+        {/* 06 QUALITY */}
         <section id="quality" className="reveal py-14">
           <h2 className="display max-w-2xl text-3xl md:text-5xl">Quality & certification.</h2>
           <p className="mt-4 max-w-xl text-sm text-ink-soft">
@@ -248,9 +275,9 @@ function Index() {
             ))}
           </div>
         </section>
-        <SectionTag n="05" label="quality & certification" />
+        <SectionTag n="06" label="quality & certification" />
 
-        {/* 06 QUOTE */}
+        {/* 07 QUOTE */}
         <section id="quote" className="reveal py-16">
           <div className="grid gap-10 md:grid-cols-[1fr_1.1fr] md:gap-16">
             <div>
@@ -298,9 +325,9 @@ function Index() {
             </form>
           </div>
         </section>
-        <SectionTag n="06" label="request a quote — the conversion" />
+        <SectionTag n="07" label="request a quote — the conversion" />
 
-        {/* 07 CLIENT REVIEWS */}
+        {/* 08 CLIENT REVIEWS */}
         <section id="reviews" className="reveal py-16">
           <h2 className="display max-w-xl text-3xl md:text-5xl">What our clients say.</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -318,9 +345,9 @@ function Index() {
             ))}
           </div>
         </section>
-        <SectionTag n="07" label="client reviews — trusted supply partners" />
+        <SectionTag n="08" label="client reviews — trusted supply partners" />
 
-        {/* 08 PRODUCTS */}
+        {/* 09 PRODUCTS */}
         <section id="products" className="reveal py-14">
           <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
             <h2 className="display max-w-xl text-3xl md:text-5xl">
@@ -343,9 +370,9 @@ function Index() {
             ))}
           </div>
         </section>
-        <SectionTag n="08" label="products — granite by gradation (6 cards)" />
+        <SectionTag n="09" label="products — granite by gradation (6 cards)" />
 
-        {/* 09 FOOTER */}
+        {/* 10 FOOTER */}
         <footer className="grid gap-10 py-14 md:grid-cols-4">
           <div>
             <div className="flex items-center gap-2">
@@ -379,7 +406,7 @@ function Index() {
             </div>
           </div>
         </footer>
-        <SectionTag n="09" label="footer — contact & trust" />
+        <SectionTag n="10" label="footer — contact & trust" />
       </main>
     </div>
   );
