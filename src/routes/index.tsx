@@ -163,8 +163,6 @@ function Index() {
       </section>
 
       <main className="mx-auto max-w-[1200px] px-6 font-serif">
-        <div className="tick-rule mt-10" />
-        <SectionTag n="01" label="hero — the thesis | gradation rule" />
 
         {/* 02 WHY MERCIFUL */}
         <section className="reveal py-14">
