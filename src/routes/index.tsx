@@ -275,7 +275,7 @@ function Index() {
             ))}
           </div>
         </section>
-        <SectionTag n="05" label="quality & certification" />
+        <SectionTag n="06" label="quality & certification" />
 
         {/* 06 QUOTE */}
         <section id="quote" className="reveal py-16">
@@ -325,7 +325,7 @@ function Index() {
             </form>
           </div>
         </section>
-        <SectionTag n="06" label="request a quote — the conversion" />
+        <SectionTag n="07" label="request a quote — the conversion" />
 
         {/* 07 CLIENT REVIEWS */}
         <section id="reviews" className="reveal py-16">
@@ -345,7 +345,7 @@ function Index() {
             ))}
           </div>
         </section>
-        <SectionTag n="07" label="client reviews — trusted supply partners" />
+        <SectionTag n="08" label="client reviews — trusted supply partners" />
 
         {/* 08 PRODUCTS */}
         <section id="products" className="reveal py-14">
@@ -370,7 +370,7 @@ function Index() {
             ))}
           </div>
         </section>
-        <SectionTag n="08" label="products — granite by gradation (6 cards)" />
+        <SectionTag n="09" label="products — granite by gradation (6 cards)" />
 
         {/* 09 FOOTER */}
         <footer className="grid gap-10 py-14 md:grid-cols-4">
@@ -406,7 +406,7 @@ function Index() {
             </div>
           </div>
         </footer>
-        <SectionTag n="09" label="footer — contact & trust" />
+        <SectionTag n="10" label="footer — contact & trust" />
       </main>
     </div>
   );
