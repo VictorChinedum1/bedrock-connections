@@ -87,7 +87,7 @@ function SectionTag({ n, label }: { n: string; label: string }) {
 function Index() {
   useReveal();
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
       {/* HEADER */}
       <header className="sticky top-0 z-50 border-b border-rule bg-background/85 backdrop-blur">
         <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
