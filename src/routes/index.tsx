@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Check, Quote } from "lucide-react";
 import heroImg from "@/assets/quarry-hero.jpg";
 import plantImg from "@/assets/quarry-plant.jpg";
+import cropVideo from "@/assets/crop1.mp4.asset.json";
 import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
