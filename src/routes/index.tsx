@@ -123,7 +123,7 @@ function Index() {
           <p className="mono reveal text-xs text-background/70">
             Ilara-Mokin · Ondo State · Est. operations
           </p>
-          <h1 className="display reveal mt-6 max-w-[18ch] text-[44px] leading-[1.02] text-background md:text-[88px]">
+          <h1 className="display reveal mt-6 max-w-[18ch] text-[44px] leading-[1.02] text-gradient-hero md:text-[88px]">
             Granite, graded
             <br />
             to specification.
@@ -155,31 +155,33 @@ function Index() {
 
       <main className="mx-auto max-w-[1200px] px-6 font-serif">
 
-        {/* 02 WHY MERCIFUL */}
-        <section className="reveal py-14">
-          <h2 className="display max-w-2xl text-3xl md:text-5xl">
-            Four pillars behind every tonne we dispatch.
-          </h2>
-          <div className="mt-10 grid gap-px bg-rule md:grid-cols-2">
-            {pillars.map((p) => (
-              <div key={p.n} className="bg-background p-6 md:p-8">
-                <div className="flex items-baseline gap-4">
-                  <span className="mono text-xs text-primary">{p.n}</span>
-                  <h3 className="text-lg font-semibold">{p.title}</h3>
+        {/* WHY MERCIFUL */}
+        <section className="full-bleed bg-section-sand">
+          <div className="reveal mx-auto max-w-[1200px] px-6 py-14">
+            <h2 className="display max-w-2xl text-3xl md:text-5xl">
+              Four pillars behind every <span className="text-accent">tonne we dispatch.</span>
+            </h2>
+            <div className="mt-10 grid gap-px bg-rule md:grid-cols-2">
+              {pillars.map((p) => (
+                <div key={p.n} className="bg-background p-6 md:p-8">
+                  <div className="flex items-baseline gap-4">
+                    <span className="mono text-xs text-accent">{p.n}</span>
+                    <h3 className="text-lg font-semibold">{p.title}</h3>
+                  </div>
+                  <p className="mt-3 max-w-md text-sm text-ink-soft md:ml-10">{p.desc}</p>
                 </div>
-                <p className="mt-3 max-w-md text-sm text-ink-soft md:ml-10">{p.desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
         
 
-        {/* 03 OPERATIONS */}
+        {/* OPERATIONS */}
         <section id="operations" className="reveal py-14">
           <div className="grid gap-10 md:grid-cols-[1.1fr_1fr] md:items-center">
             <div>
               <h2 className="display text-3xl md:text-5xl">
-                From bedrock to <span className="text-primary">truck bed.</span>
+                From bedrock to <span className="text-accent">truck bed.</span>
               </h2>
               <p className="mt-4 max-w-md text-sm text-ink-soft">
                 A single, controlled chain — engineered so a 30-tonne haul leaves the plant the same way the last
@@ -206,21 +208,23 @@ function Index() {
         </section>
         
 
-        {/* 04 BUYERS */}
-        <section className="reveal py-14">
-          <h2 className="display max-w-xl text-3xl md:text-5xl">Who we supply.</h2>
-          <div className="mt-10 grid gap-px bg-rule md:grid-cols-4">
-            {buyers.map((b) => (
-              <div key={b.title} className="bg-surface p-6">
-                <h3 className="text-sm font-semibold">{b.title}</h3>
-                <p className="mt-3 text-sm text-ink-soft">{b.desc}</p>
-              </div>
-            ))}
+        {/* BUYERS */}
+        <section className="full-bleed bg-section-sage">
+          <div className="reveal mx-auto max-w-[1200px] px-6 py-14">
+            <h2 className="display max-w-xl text-3xl md:text-5xl">Who we supply.</h2>
+            <div className="mt-10 grid gap-px bg-rule md:grid-cols-4">
+              {buyers.map((b) => (
+                <div key={b.title} className="bg-background p-6">
+                  <h3 className="text-sm font-semibold text-accent-green">{b.title}</h3>
+                  <p className="mt-3 text-sm text-ink-soft">{b.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
         
 
-        {/* 05 QUARRY IN MOTION */}
+        {/* QUARRY IN MOTION */}
         <section className="reveal relative isolate left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-foreground text-background">
           <div className="h-[60vh] min-h-[420px] w-full">
             <video
@@ -246,34 +250,36 @@ function Index() {
         </section>
         
 
-        {/* 06 QUALITY */}
-        <section id="quality" className="reveal py-14">
-          <h2 className="display max-w-2xl text-3xl md:text-5xl">Quality & certification.</h2>
-          <p className="mt-4 max-w-xl text-sm text-ink-soft">
-            We operate under licensed mineral title and document compliance at every stage. Test certificates available
-            on request for any active contract.
-          </p>
-          <div className="mt-8 grid gap-3 md:grid-cols-3">
-            {certs.map((c) => (
-              <div key={c} className="flex items-start gap-3 border border-rule p-5">
-                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center bg-primary text-primary-foreground">
-                  <Check className="h-3 w-3" />
-                </span>
-                <p className="text-sm">{c}</p>
-              </div>
-            ))}
+        {/* QUALITY */}
+        <section id="quality" className="full-bleed bg-section-sand">
+          <div className="reveal mx-auto max-w-[1200px] px-6 py-14">
+            <h2 className="display max-w-2xl text-3xl md:text-5xl">Quality & certification.</h2>
+            <p className="mt-4 max-w-xl text-sm text-ink-soft">
+              We operate under licensed mineral title and document compliance at every stage. Test certificates available
+              on request for any active contract.
+            </p>
+            <div className="mt-8 grid gap-3 md:grid-cols-3">
+              {certs.map((c) => (
+                <div key={c} className="flex items-start gap-3 border border-rule bg-background p-5">
+                  <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center bg-accent text-accent-foreground">
+                    <Check className="h-3 w-3" />
+                  </span>
+                  <p className="text-sm">{c}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
         
 
-        {/* 07 QUOTE */}
+        {/* QUOTE */}
         <section id="quote" className="reveal py-16">
           <div className="grid gap-10 md:grid-cols-[1fr_1.1fr] md:gap-16">
             <div>
               <h2 className="display text-3xl md:text-5xl">
                 Request a quote.
                 <br />
-                <span className="text-primary">We respond inside 24 hours.</span>
+                <span className="text-gradient-warm">We respond inside 24 hours.</span>
               </h2>
               <p className="mt-6 max-w-sm text-sm text-ink-soft">
                 Tell us the grade, tonnage and delivery window. We'll come back with pricing, lead time and a dispatch
@@ -316,82 +322,88 @@ function Index() {
         </section>
         
 
-        {/* 08 CLIENT REVIEWS */}
-        <section id="reviews" className="reveal py-16">
-          <h2 className="display max-w-xl text-3xl md:text-5xl">What our clients say.</h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {reviews.map((r) => (
-              <div key={r.author} className="flex flex-col justify-between border border-rule bg-surface p-6 md:p-8">
-                <div>
-                  <Quote className="h-6 w-6 text-primary/60" />
-                  <p className="mt-4 text-base leading-relaxed text-ink">{r.quote}</p>
+        {/* CLIENT REVIEWS */}
+        <section id="reviews" className="full-bleed bg-section-sage">
+          <div className="reveal mx-auto max-w-[1200px] px-6 py-16">
+            <h2 className="display max-w-xl text-3xl md:text-5xl">What our clients say.</h2>
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {reviews.map((r) => (
+                <div key={r.author} className="flex flex-col justify-between border border-rule bg-background p-6 md:p-8">
+                  <div>
+                    <Quote className="h-6 w-6 text-accent" />
+                    <p className="mt-4 text-base leading-relaxed text-ink">{r.quote}</p>
+                  </div>
+                  <div className="mt-8">
+                    <p className="text-sm font-semibold text-accent-green">{r.author}</p>
+                    <p className="text-xs text-ink-soft">{r.role}</p>
+                  </div>
                 </div>
-                <div className="mt-8">
-                  <p className="text-sm font-semibold">{r.author}</p>
-                  <p className="text-xs text-ink-soft">{r.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-        
-
-        {/* 09 PRODUCTS */}
-        <section id="products" className="reveal py-14">
-          <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
-            <h2 className="display max-w-xl text-3xl md:text-5xl">
-              Granite by gradation — <span className="text-primary">six standards.</span>
-            </h2>
-            <p className="max-w-sm text-sm text-ink-soft">
-              Each grade is crushed, screened and stockpiled separately. Specify the size; we deliver it clean.
-            </p>
-          </div>
-          <div className="grid gap-px bg-rule md:grid-cols-3">
-            {products.map((p) => (
-              <article key={p.title} className="group bg-background p-6 transition-colors hover:bg-surface">
-                <div className="flex items-start justify-between">
-                  <span className="mono text-xs text-primary">{p.code}</span>
-                  <ArrowUpRight className="h-4 w-4 text-ink-soft transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </div>
-                <h3 className="display mt-8 text-2xl">{p.title}</h3>
-                <p className="mt-3 text-sm text-ink-soft">{p.desc}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-        
-
-        {/* 10 FOOTER */}
-        <footer className="grid gap-10 py-14 md:grid-cols-4">
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="block h-3 w-3 bg-primary" />
-              <span className="text-sm font-semibold tracking-tight">MERCIFUL QUARRY</span>
-            </div>
-            <p className="mt-4 max-w-xs text-xs text-ink-soft">
-              Merciful Natural Resources Limited. Granite aggregates produced at Ilara-Mokin, Ondo State.
-            </p>
-          </div>
-          <div>
-            <p className="mono text-[11px] uppercase text-ink-soft">Explore</p>
-            <ul className="mt-3 space-y-2 text-sm">
-              {navLinks.map((l) => (
-                <li key={l.href}><a href={l.href} className="hover:text-primary">{l.label}</a></li>
               ))}
-            </ul>
+            </div>
           </div>
-          <div>
-            <p className="mono text-[11px] uppercase text-ink-soft">Contact</p>
-            <ul className="mt-3 space-y-2 text-sm">
-              <li>Mr. Biodun Ogunsan</li>
-              <li className="text-ink-soft">MD / CEO</li>
-              <li>+234 704 700 0542</li>
-              <li>+234 704 700 0541</li>
-            </ul>
+        </section>
+        
+
+        {/* PRODUCTS */}
+        <section id="products" className="full-bleed bg-section-sand">
+          <div className="reveal mx-auto max-w-[1200px] px-6 py-14">
+            <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+              <h2 className="display max-w-xl text-3xl md:text-5xl">
+                Granite by gradation — <span className="text-accent">six standards.</span>
+              </h2>
+              <p className="max-w-sm text-sm text-ink-soft">
+                Each grade is crushed, screened and stockpiled separately. Specify the size; we deliver it clean.
+              </p>
+            </div>
+            <div className="grid gap-px bg-rule md:grid-cols-3">
+              {products.map((p) => (
+                <article key={p.title} className="group bg-background p-6 transition-colors hover:bg-accent-soft/20">
+                  <div className="flex items-start justify-between">
+                    <span className="mono text-xs text-accent">{p.code}</span>
+                    <ArrowUpRight className="h-4 w-4 text-ink-soft transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </div>
+                  <h3 className="display mt-8 text-2xl">{p.title}</h3>
+                  <p className="mt-3 text-sm text-ink-soft">{p.desc}</p>
+                </article>
+              ))}
+            </div>
           </div>
-          <div className="flex items-end justify-start md:justify-end">
-            <div className="mono text-[10px] text-ink-soft">
-              © {new Date().getFullYear()} MNRL<br />All rights reserved.
+        </section>
+        
+
+        {/* FOOTER */}
+        <footer className="full-bleed bg-foreground text-background">
+          <div className="reveal mx-auto grid max-w-[1200px] gap-10 px-6 py-14 md:grid-cols-4">
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="block h-3 w-3 bg-accent" />
+                <span className="text-sm font-semibold tracking-tight">MERCIFUL QUARRY</span>
+              </div>
+              <p className="mt-4 max-w-xs text-xs text-background/70">
+                Merciful Natural Resources Limited. Granite aggregates produced at Ilara-Mokin, Ondo State.
+              </p>
+            </div>
+            <div>
+              <p className="mono text-[11px] uppercase text-background/60">Explore</p>
+              <ul className="mt-3 space-y-2 text-sm">
+                {navLinks.map((l) => (
+                  <li key={l.href}><a href={l.href} className="transition-colors hover:text-accent-soft">{l.label}</a></li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="mono text-[11px] uppercase text-background/60">Contact</p>
+              <ul className="mt-3 space-y-2 text-sm">
+                <li>Mr. Biodun Ogunsan</li>
+                <li className="text-background/70">MD / CEO</li>
+                <li>+234 704 700 0542</li>
+                <li>+234 704 700 0541</li>
+              </ul>
+            </div>
+            <div className="flex items-end justify-start md:justify-end">
+              <div className="mono text-[10px] text-background/60">
+                © {new Date().getFullYear()} MNRL<br />All rights reserved.
+              </div>
             </div>
           </div>
         </footer>
