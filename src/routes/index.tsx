@@ -1,5 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, Check, Quote } from "lucide-react";
+import { createFileRoute } from '@tanstack/react-router'
+import { ArrowRight, ArrowUpRight, Check, Quote, Menu, X } from "lucide-react";
+import { useState } from "react";
 import heroImg from "@/assets/quarry-hero.jpg";
 import excavatorAsset from "@/assets/quarry-excavator.jpg.asset.json";
 import galleryImg from "@/gallery/ezgif-frame-003.jpg";
@@ -84,6 +85,7 @@ const reviews = [
 
 
 function Index() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   useReveal();
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -101,12 +103,50 @@ function Index() {
               </a>
             ))}
           </nav>
-          <a
-            href="#quote"
-            className="inline-flex items-center gap-1.5 bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-          >
-            Request quote <ArrowRight className="h-3.5 w-3.5" />
-          </a>
+          
+          <div className="flex items-center gap-4">
+            <a
+              href="#quote"
+              className="hidden items-center gap-1.5 bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 sm:inline-flex"
+            >
+              Request quote <ArrowRight className="h-3.5 w-3.5" />
+            </a>
+
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="relative z-50 p-2 text-foreground transition-colors hover:bg-surface md:hidden"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
+        </div>
+
+        {/* MOBILE MENU OVERLAY */}
+        <div
+          className={`fixed inset-0 z-40 flex flex-col bg-background transition-transform duration-500 ease-in-out md:hidden ${
+            isMenuOpen ? "translate-y-0" : "-translate-y-full"
+          }`}
+        >
+          <div className="flex flex-col items-center justify-center flex-1 gap-8 px-6 text-center">
+            {navLinks.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setIsMenuOpen(false)}
+                className="text-3xl font-bold tracking-tight display transition-colors hover:text-primary"
+              >
+                {l.label}
+              </a>
+            ))}
+            <a
+              href="#quote"
+              onClick={() => setIsMenuOpen(false)}
+              className="mt-4 inline-flex items-center gap-2 bg-primary px-8 py-4 text-lg font-medium text-primary-foreground"
+            >
+              Get a quote <ArrowRight className="h-5 w-5" />
+            </a>
+          </div>
         </div>
       </header>
 
