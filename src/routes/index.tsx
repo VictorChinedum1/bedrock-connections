@@ -173,7 +173,7 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/70 via-foreground/55 to-foreground/85" />
         <div className="relative mx-auto flex h-full max-w-[1200px] flex-col justify-end px-6 pb-16 pt-28">
           <p className="mono reveal text-xs text-background/70">
-            Ilara-Mokin · Ondo State · Est. operations
+            Ilara-Mokin · Ondo State · Est. 2020
           </p>
           <h1 className="display reveal-words mt-6 max-w-[18ch] text-[40px] leading-[1.02] text-gradient-hero sm:text-[56px] md:text-[88px]">
             Granite, graded to specification.
@@ -257,6 +257,49 @@ function Index() {
                 loading="lazy"
                 className="aspect-[4/3] w-full object-cover"
               />
+            </div>
+          </div>
+        </section>
+        
+
+        {/* PRODUCTS — MOVED UP */}
+        <section id="products" className="full-bleed bg-section-sand">
+          <div className="mx-auto max-w-[1200px] px-6 py-14">
+            <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+              <h2 className="display reveal-words max-w-xl text-3xl md:text-5xl">
+                Granite by gradation — six standards.
+              </h2>
+              <p className="reveal max-w-sm text-sm text-ink-soft">
+                Each grade is crushed, screened and stockpiled separately. Specify the size; we deliver it clean.
+              </p>
+            </div>
+            <div className="grid gap-px bg-rule sm:grid-cols-2 md:grid-cols-3">
+              {products.map((p, i) => (
+                <article
+                  key={p.title}
+                  className="reveal-zoom group flex flex-col bg-background transition-colors hover:bg-accent-soft/20"
+                  style={{ transitionDelay: `${i * 80}ms` }}
+                >
+                  <div className="img-zoom aspect-[4/3] w-full overflow-hidden">
+                    <img
+                      src={p.img}
+                      alt={`${p.title} — ${p.code} granite aggregate`}
+                      width={800}
+                      height={600}
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <div className="flex items-start justify-between">
+                      <span className="mono text-xs text-accent">{p.code}</span>
+                      <ArrowUpRight className="h-4 w-4 text-ink-soft transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    </div>
+                    <h3 className="display mt-6 text-2xl">{p.title}</h3>
+                    <p className="mt-3 text-sm text-ink-soft">{p.desc}</p>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -410,48 +453,6 @@ function Index() {
         </section>
         
 
-        {/* PRODUCTS */}
-        <section id="products" className="full-bleed bg-section-sand">
-          <div className="mx-auto max-w-[1200px] px-6 py-14">
-            <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
-              <h2 className="display reveal-words max-w-xl text-3xl md:text-5xl">
-                Granite by gradation — six standards.
-              </h2>
-              <p className="reveal max-w-sm text-sm text-ink-soft">
-                Each grade is crushed, screened and stockpiled separately. Specify the size; we deliver it clean.
-              </p>
-            </div>
-            <div className="grid gap-px bg-rule sm:grid-cols-2 md:grid-cols-3">
-              {products.map((p, i) => (
-                <article
-                  key={p.title}
-                  className="reveal-zoom group flex flex-col bg-background transition-colors hover:bg-accent-soft/20"
-                  style={{ transitionDelay: `${i * 80}ms` }}
-                >
-                  <div className="img-zoom aspect-[4/3] w-full overflow-hidden">
-                    <img
-                      src={p.img}
-                      alt={`${p.title} — ${p.code} granite aggregate`}
-                      width={800}
-                      height={600}
-                      loading="lazy"
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                  <div className="flex flex-1 flex-col p-6">
-                    <div className="flex items-start justify-between">
-                      <span className="mono text-xs text-accent">{p.code}</span>
-                      <ArrowUpRight className="h-4 w-4 text-ink-soft transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                    </div>
-                    <h3 className="display mt-6 text-2xl">{p.title}</h3>
-                    <p className="mt-3 text-sm text-ink-soft">{p.desc}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-        
 
         {/* CALL TO ACTION — BRAND STATEMENT */}
         <section className="full-bleed bg-section-sand py-32 flex flex-col items-center justify-center overflow-hidden">
@@ -471,7 +472,7 @@ function Index() {
                 <span className="text-sm font-semibold tracking-tight">MERCIFUL QUARRY</span>
               </div>
               <p className="mt-4 max-w-xs text-xs text-background/70">
-                Merciful Natural Resources Limited. Granite aggregates produced at Ilara-Mokin, Ondo State.
+                Merciful Natural Resources Limited · RC 1686282. Granite aggregates produced at Ilara-Mokin, Ondo State.
               </p>
             </div>
             <div>
