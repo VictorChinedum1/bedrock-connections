@@ -172,7 +172,7 @@ function Index() {
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/70 via-foreground/55 to-foreground/85" />
         <div className="relative mx-auto flex h-full max-w-[1200px] flex-col justify-end px-6 pb-16 pt-28">
-          <h1 className="display reveal-words mt-6 max-w-[18ch] text-[40px] leading-[1.02] text-gradient-hero sm:text-[56px] md:text-[88px]">
+          <h1 className="display reveal mt-6 max-w-[18ch] text-[40px] leading-[1.02] text-gradient-hero sm:text-[56px] md:text-[88px]">
             Granite, graded<br />to specification.
           </h1>
           <p className="reveal mt-6 max-w-[52ch] text-sm text-background/80 sm:text-base md:text-lg">
