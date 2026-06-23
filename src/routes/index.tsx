@@ -84,7 +84,7 @@ const reviews = [
 function Index() {
   useReveal();
   return (
-    <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground">
       {/* HEADER */}
       <header className="sticky top-0 z-50 border-b border-rule bg-background/85 backdrop-blur">
         <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
@@ -129,12 +129,10 @@ function Index() {
           <p className="mono reveal text-xs text-background/70">
             Ilara-Mokin · Ondo State · Est. operations
           </p>
-          <h1 className="display reveal mt-6 max-w-[18ch] text-[44px] leading-[1.02] text-gradient-hero md:text-[88px]">
-            Granite, graded
-            <br />
-            to specification.
+          <h1 className="display reveal-words mt-6 max-w-[18ch] text-[40px] leading-[1.02] text-gradient-hero sm:text-[56px] md:text-[88px]">
+            Granite, graded to specification.
           </h1>
-          <p className="reveal mt-6 max-w-[52ch] text-base text-background/80 md:text-lg">
+          <p className="reveal mt-6 max-w-[52ch] text-sm text-background/80 sm:text-base md:text-lg">
             Merciful Natural Resources Limited produces half-a-million metric tons of granite
             aggregates a year — consistent, dispatched on time, and built for the projects that
             don't tolerate variance.
@@ -163,13 +161,17 @@ function Index() {
 
         {/* WHY MERCIFUL */}
         <section className="full-bleed bg-section-sand">
-          <div className="reveal mx-auto max-w-[1200px] px-6 py-14">
-            <h2 className="display max-w-2xl text-3xl md:text-5xl">
-              Four pillars behind every <span className="text-accent">tonne we dispatch.</span>
+          <div className="mx-auto max-w-[1200px] px-6 py-14">
+            <h2 className="display reveal-words max-w-2xl text-3xl md:text-5xl">
+              Four pillars behind every tonne we dispatch.
             </h2>
             <div className="mt-10 grid gap-px bg-rule md:grid-cols-2">
-              {pillars.map((p) => (
-                <div key={p.n} className="bg-background p-6 md:p-8">
+              {pillars.map((p, i) => (
+                <div
+                  key={p.n}
+                  className={`reveal bg-background p-6 md:p-8`}
+                  style={{ transitionDelay: `${i * 90}ms` }}
+                >
                   <div className="flex items-baseline gap-4">
                     <span className="mono text-xs text-accent">{p.n}</span>
                     <h3 className="text-lg font-semibold">{p.title}</h3>
@@ -183,44 +185,50 @@ function Index() {
         
 
         {/* OPERATIONS */}
-        <section id="operations" className="reveal py-14">
+        <section id="operations" className="py-14">
           <div className="grid gap-10 md:grid-cols-[1.1fr_1fr] md:items-center">
-            <div>
-              <h2 className="display text-3xl md:text-5xl">
-                From bedrock to <span className="text-accent">truck bed.</span>
+            <div className="reveal-left">
+              <h2 className="display reveal-words text-3xl md:text-5xl">
+                From bedrock to truck bed.
               </h2>
-              <p className="mt-4 max-w-md text-sm text-ink-soft">
+              <p className="reveal mt-4 max-w-md text-sm text-ink-soft">
                 A single, controlled chain — engineered so a 30-tonne haul leaves the plant the same way the last
                 thousand did.
               </p>
-              <div className="mt-8 flex flex-wrap items-center gap-2">
+              <div className="reveal mt-8 flex flex-wrap items-center gap-2">
                 {process.map((step, i) => (
                   <div key={step} className="flex items-center gap-2">
-                    <div className="border border-rule px-4 py-2 text-sm">{step}</div>
+                    <div className="border border-rule bg-background px-3 py-2 text-xs sm:px-4 sm:text-sm">{step}</div>
                     {i < process.length - 1 && <ArrowRight className="h-3.5 w-3.5 text-ink-soft" />}
                   </div>
                 ))}
               </div>
             </div>
-            <img
-              src={plantImg}
-              alt="Crushing plant and haul trucks in operation"
-              width={1280}
-              height={960}
-              loading="lazy"
-              className="aspect-[4/3] w-full object-cover"
-            />
+            <div className="reveal-right img-zoom">
+              <img
+                src={excavatorAsset.url}
+                alt="Excavator loading granite into a haul truck at the Ilara-Mokin quarry pit"
+                width={1280}
+                height={720}
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover"
+              />
+            </div>
           </div>
         </section>
         
 
         {/* BUYERS */}
         <section className="full-bleed bg-section-sage">
-          <div className="reveal mx-auto max-w-[1200px] px-6 py-14">
-            <h2 className="display max-w-xl text-3xl md:text-5xl">Who we supply.</h2>
-            <div className="mt-10 grid gap-px bg-rule md:grid-cols-4">
-              {buyers.map((b) => (
-                <div key={b.title} className="bg-background p-6">
+          <div className="mx-auto max-w-[1200px] px-6 py-14">
+            <h2 className="display reveal-words max-w-xl text-3xl md:text-5xl">Who we supply.</h2>
+            <div className="mt-10 grid gap-px bg-rule sm:grid-cols-2 md:grid-cols-4">
+              {buyers.map((b, i) => (
+                <div
+                  key={b.title}
+                  className="reveal-zoom bg-background p-6"
+                  style={{ transitionDelay: `${i * 80}ms` }}
+                >
                   <h3 className="text-sm font-semibold text-accent-green">{b.title}</h3>
                   <p className="mt-3 text-sm text-ink-soft">{b.desc}</p>
                 </div>
@@ -231,8 +239,8 @@ function Index() {
         
 
         {/* QUARRY IN MOTION */}
-        <section className="reveal relative isolate left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-foreground text-background">
-          <div className="h-[60vh] min-h-[420px] w-full">
+        <section className="full-bleed relative isolate overflow-hidden bg-foreground text-background">
+          <div className="relative h-[60vh] min-h-[420px] w-full">
             <video
               className="absolute inset-0 h-full w-full object-cover"
               autoPlay
@@ -246,8 +254,8 @@ function Index() {
             <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/40 to-foreground/60" />
             <div className="relative mx-auto flex h-full max-w-[1200px] items-end px-6 pb-12">
               <div className="max-w-xl">
-                <p className="mono text-xs uppercase tracking-widest text-background/70">Quarry in motion</p>
-                <h2 className="display mt-4 text-3xl leading-tight md:text-5xl">
+                <p className="mono reveal text-xs uppercase tracking-widest text-background/70">Quarry in motion</p>
+                <h2 className="display reveal-words mt-4 text-3xl leading-tight md:text-5xl">
                   Bedrock to baseline. Every blast, every load.
                 </h2>
               </div>
