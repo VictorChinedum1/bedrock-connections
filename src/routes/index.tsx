@@ -123,21 +123,21 @@ function Index() {
 
         {/* MOBILE MENU OVERLAY — NOW OPENS AFTER THE NAV SECTION */}
         <div
-          className={`absolute top-full left-0 right-0 z-40 bg-background border-b border-rule shadow-2xl transition-all duration-300 ease-in-out md:hidden ${
-            isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"
-          }`}
+          className={`absolute top-[calc(100%-8px)] right-6 z-40 bg-background border border-rule rounded-sm shadow-2xl transition-all duration-300 ease-in-out md:hidden ${
+            isMenuOpen ? "opacity-100 translate-y-4" : "opacity-0 translate-y-2 pointer-events-none"
+          } w-[240px]`}
         >
-          <div className="flex flex-col py-8 px-6 gap-6">
+          <div className="flex flex-col py-5 px-6 gap-4">
             {navLinks.map((l, i) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="flex items-center justify-between group border-b border-rule/50 pb-4 text-2xl font-bold tracking-tight display transition-colors hover:text-primary"
+                className="flex items-center justify-between group border-b border-rule/30 pb-3 text-lg font-bold tracking-tight display transition-colors hover:text-primary"
               >
                 <span>{l.label}</span>
                 <ArrowRight 
-                  className={`h-5 w-5 transition-all duration-500 delay-[${i * 100}ms] ${
+                  className={`h-4 w-4 transition-all duration-500 delay-[${i * 70}ms] ${
                     isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
                   }`} 
                 />
@@ -146,9 +146,9 @@ function Index() {
             <a
               href="#quote"
               onClick={() => setIsMenuOpen(false)}
-              className="mt-4 flex items-center justify-center gap-2 bg-primary px-8 py-4 text-lg font-medium text-primary-foreground transition-opacity hover:opacity-90"
+              className="mt-2 flex items-center justify-center gap-2 bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
             >
-              Get a quote <ArrowRight className="h-5 w-5" />
+              Get a quote <ArrowRight className="h-4 w-4" />
             </a>
           </div>
         </div>
