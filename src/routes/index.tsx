@@ -1,8 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Check, Quote } from "lucide-react";
 import heroImg from "@/assets/quarry-hero.jpg";
-import plantImg from "@/assets/quarry-plant.jpg";
+import excavatorAsset from "@/assets/quarry-excavator.jpg.asset.json";
 import cropVideo from "@/assets/crop1.mp4.asset.json";
+import productDust from "@/assets/product-dust.jpg";
+import product6mm from "@/assets/product-6mm.jpg";
+import product13mm from "@/assets/product-13mm.jpg";
+import product19mm from "@/assets/product-19mm.jpg";
+import product25mm from "@/assets/product-25mm.jpg";
+import productRiprap from "@/assets/product-riprap.jpg";
 import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
@@ -26,12 +32,12 @@ const navLinks = [
 ];
 
 const products = [
-  { code: "0–5", title: "Granite Dust", desc: "Quarry fines for asphalt filler, block-work and base stabilisation." },
-  { code: "3/8″", title: "Chippings — 6mm", desc: "Fine concrete mixes, precast units, decorative finishes." },
-  { code: "1/2″", title: "Aggregate — 13mm", desc: "Standard concrete, ready-mix plants, mid-grade structural pours." },
-  { code: "3/4″", title: "Aggregate — 19mm", desc: "Heavy structural concrete, foundations, columns and slabs." },
-  { code: "1″", title: "Aggregate — 25mm", desc: "Mass concrete, drainage works and large-volume infrastructure." },
-  { code: "RIP-RAP", title: "Armour Stone", desc: "Slope protection, erosion control, marine and roadworks." },
+  { code: "0–5", title: "Granite Dust", desc: "Quarry fines for asphalt filler, block-work and base stabilisation.", img: productDust },
+  { code: "3/8″", title: "Chippings — 6mm", desc: "Fine concrete mixes, precast units, decorative finishes.", img: product6mm },
+  { code: "1/2″", title: "Aggregate — 13mm", desc: "Standard concrete, ready-mix plants, mid-grade structural pours.", img: product13mm },
+  { code: "3/4″", title: "Aggregate — 19mm", desc: "Heavy structural concrete, foundations, columns and slabs.", img: product19mm },
+  { code: "1″", title: "Aggregate — 25mm", desc: "Mass concrete, drainage works and large-volume infrastructure.", img: product25mm },
+  { code: "RIP-RAP", title: "Armour Stone", desc: "Slope protection, erosion control, marine and roadworks.", img: productRiprap },
 ];
 
 const pillars = [
