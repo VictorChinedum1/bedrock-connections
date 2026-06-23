@@ -266,15 +266,19 @@ function Index() {
 
         {/* QUALITY */}
         <section id="quality" className="full-bleed bg-section-sand">
-          <div className="reveal mx-auto max-w-[1200px] px-6 py-14">
-            <h2 className="display max-w-2xl text-3xl md:text-5xl">Quality & certification.</h2>
-            <p className="mt-4 max-w-xl text-sm text-ink-soft">
+          <div className="mx-auto max-w-[1200px] px-6 py-14">
+            <h2 className="display reveal-words max-w-2xl text-3xl md:text-5xl">Quality & certification.</h2>
+            <p className="reveal mt-4 max-w-xl text-sm text-ink-soft">
               We operate under licensed mineral title and document compliance at every stage. Test certificates available
               on request for any active contract.
             </p>
-            <div className="mt-8 grid gap-3 md:grid-cols-3">
-              {certs.map((c) => (
-                <div key={c} className="flex items-start gap-3 border border-rule bg-background p-5">
+            <div className="mt-8 grid gap-3 sm:grid-cols-2 md:grid-cols-3">
+              {certs.map((c, i) => (
+                <div
+                  key={c}
+                  className="reveal flex items-start gap-3 border border-rule bg-background p-5"
+                  style={{ transitionDelay: `${i * 100}ms` }}
+                >
                   <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center bg-accent text-accent-foreground">
                     <Check className="h-3 w-3" />
                   </span>
@@ -338,11 +342,15 @@ function Index() {
 
         {/* CLIENT REVIEWS */}
         <section id="reviews" className="full-bleed bg-section-sage">
-          <div className="reveal mx-auto max-w-[1200px] px-6 py-16">
-            <h2 className="display max-w-xl text-3xl md:text-5xl">What our clients say.</h2>
+          <div className="mx-auto max-w-[1200px] px-6 py-16">
+            <h2 className="display reveal-words max-w-xl text-3xl md:text-5xl">What our clients say.</h2>
             <div className="mt-10 grid gap-6 md:grid-cols-3">
-              {reviews.map((r) => (
-                <div key={r.author} className="flex flex-col justify-between border border-rule bg-background p-6 md:p-8">
+              {reviews.map((r, i) => (
+                <div
+                  key={r.author}
+                  className="reveal flex flex-col justify-between border border-rule bg-background p-6 md:p-8"
+                  style={{ transitionDelay: `${i * 120}ms` }}
+                >
                   <div>
                     <Quote className="h-6 w-6 text-accent" />
                     <p className="mt-4 text-base leading-relaxed text-ink">{r.quote}</p>
@@ -360,24 +368,40 @@ function Index() {
 
         {/* PRODUCTS */}
         <section id="products" className="full-bleed bg-section-sand">
-          <div className="reveal mx-auto max-w-[1200px] px-6 py-14">
+          <div className="mx-auto max-w-[1200px] px-6 py-14">
             <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
-              <h2 className="display max-w-xl text-3xl md:text-5xl">
-                Granite by gradation — <span className="text-accent">six standards.</span>
+              <h2 className="display reveal-words max-w-xl text-3xl md:text-5xl">
+                Granite by gradation — six standards.
               </h2>
-              <p className="max-w-sm text-sm text-ink-soft">
+              <p className="reveal max-w-sm text-sm text-ink-soft">
                 Each grade is crushed, screened and stockpiled separately. Specify the size; we deliver it clean.
               </p>
             </div>
-            <div className="grid gap-px bg-rule md:grid-cols-3">
-              {products.map((p) => (
-                <article key={p.title} className="group bg-background p-6 transition-colors hover:bg-accent-soft/20">
-                  <div className="flex items-start justify-between">
-                    <span className="mono text-xs text-accent">{p.code}</span>
-                    <ArrowUpRight className="h-4 w-4 text-ink-soft transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            <div className="grid gap-px bg-rule sm:grid-cols-2 md:grid-cols-3">
+              {products.map((p, i) => (
+                <article
+                  key={p.title}
+                  className="reveal-zoom group flex flex-col bg-background transition-colors hover:bg-accent-soft/20"
+                  style={{ transitionDelay: `${i * 80}ms` }}
+                >
+                  <div className="img-zoom aspect-[4/3] w-full overflow-hidden">
+                    <img
+                      src={p.img}
+                      alt={`${p.title} — ${p.code} granite aggregate`}
+                      width={800}
+                      height={600}
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                    />
                   </div>
-                  <h3 className="display mt-8 text-2xl">{p.title}</h3>
-                  <p className="mt-3 text-sm text-ink-soft">{p.desc}</p>
+                  <div className="flex flex-1 flex-col p-6">
+                    <div className="flex items-start justify-between">
+                      <span className="mono text-xs text-accent">{p.code}</span>
+                      <ArrowUpRight className="h-4 w-4 text-ink-soft transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    </div>
+                    <h3 className="display mt-6 text-2xl">{p.title}</h3>
+                    <p className="mt-3 text-sm text-ink-soft">{p.desc}</p>
+                  </div>
                 </article>
               ))}
             </div>
