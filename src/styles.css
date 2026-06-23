@@ -149,6 +149,15 @@
     background-clip: text;
   }
 
+  .tick-rule {
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--color-primary) 0 1px,
+      transparent 1px 28px
+    );
+    height: 10px;
+  }
+
   .full-bleed {
     position: relative;
     left: 50%;

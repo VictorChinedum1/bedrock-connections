@@ -172,6 +172,9 @@ function Index() {
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/70 via-foreground/55 to-foreground/85" />
         <div className="relative mx-auto flex h-full max-w-[1200px] flex-col justify-end px-6 pb-16 pt-28">
+          <p className="mono reveal text-xs text-background/70">
+            Ilara-Mokin · Ondo State · Est. 2020
+          </p>
           <h1 className="display reveal mt-6 max-w-[18ch] text-[40px] leading-[1.02] text-gradient-hero sm:text-[56px] md:text-[88px]">
             Granite, graded<br />to specification.
           </h1>
@@ -199,6 +202,34 @@ function Index() {
       </section>
 
       <main className="mx-auto max-w-[1200px] px-6 font-serif">
+
+        {/* GRADATION RULE */}
+        <div className="tick-rule mt-8" />
+
+        {/* SLIM STAT STRIP */}
+        <div className="border-y border-rule py-4 mt-6">
+          <div className="flex flex-wrap items-center justify-around gap-y-2 text-xs mono uppercase tracking-wider text-ink">
+            <div className="flex items-center gap-2">
+              <span className="text-primary font-bold">500,000 MT / yr</span>
+              <span className="text-ink-soft">capacity</span>
+            </div>
+            <span className="hidden md:inline text-rule">·</span>
+            <div className="flex items-center gap-2">
+              <span className="text-primary font-bold">50+</span>
+              <span className="text-ink-soft">workforce</span>
+            </div>
+            <span className="hidden md:inline text-rule">·</span>
+            <div className="flex items-center gap-2">
+              <span className="text-primary font-bold">Est. 2020</span>
+              <span className="text-ink-soft">incorporated</span>
+            </div>
+            <span className="hidden md:inline text-rule">·</span>
+            <div className="flex items-center gap-2">
+              <span className="text-primary font-bold">Ondo State</span>
+              <span className="text-ink-soft">location</span>
+            </div>
+          </div>
+        </div>
 
         {/* WHY MERCIFUL */}
         <section className="full-bleed bg-section-sand">
@@ -246,14 +277,16 @@ function Index() {
               </div>
             </div>
             <div className="reveal-right img-zoom">
-              <img
-                src={galleryImg}
-                alt="Excavator loading granite into a haul truck at the Ilara-Mokin quarry pit"
-                width={1280}
-                height={720}
-                loading="lazy"
+              <video
                 className="aspect-[4/3] w-full object-cover"
-              />
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+              >
+                <source src={galleryVideo} type="video/mp4" />
+              </video>
             </div>
           </div>
         </section>
@@ -322,30 +355,7 @@ function Index() {
         </section>
         
 
-        {/* QUARRY IN MOTION */}
-        <section className="full-bleed relative isolate overflow-hidden bg-foreground text-background">
-          <div className="relative h-[60vh] min-h-[420px] w-full">
-            <video
-              className="absolute inset-0 h-full w-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-            >
-              <source src={galleryVideo} type="video/mp4" />
-            </video>
-            <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/40 to-foreground/60" />
-            <div className="relative mx-auto flex h-full max-w-[1200px] items-end px-6 pb-12">
-              <div className="max-w-xl">
-                <p className="mono reveal text-xs uppercase tracking-widest text-background/70">Quarry in motion</p>
-                <h2 className="display reveal-words mt-4 text-3xl leading-tight md:text-5xl">
-                  Bedrock to baseline. Every blast, every load.
-                </h2>
-              </div>
-            </div>
-          </div>
-        </section>
+
         
 
         {/* QUALITY */}
@@ -373,6 +383,31 @@ function Index() {
           </div>
         </section>
         
+
+        {/* CLIENT REVIEWS */}
+        <section id="reviews" className="full-bleed bg-section-sage">
+          <div className="mx-auto max-w-[1200px] px-6 py-16">
+            <h2 className="display reveal-words max-w-xl text-3xl md:text-5xl">What our clients say.</h2>
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {reviews.map((r, i) => (
+                <div
+                  key={r.author}
+                  className="reveal flex flex-col justify-between border border-rule bg-background p-6 md:p-8"
+                  style={{ transitionDelay: `${i * 120}ms` }}
+                >
+                  <div>
+                    <Quote className="h-6 w-6 text-accent" />
+                    <p className="mt-4 text-base leading-relaxed text-ink">{r.quote}</p>
+                  </div>
+                  <div className="mt-8">
+                    <p className="text-sm font-semibold text-accent-green">{r.author}</p>
+                    <p className="text-xs text-ink-soft">{r.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* QUOTE */}
         <section id="quote" className="reveal py-16">
@@ -424,32 +459,6 @@ function Index() {
         </section>
         
 
-        {/* CLIENT REVIEWS */}
-        <section id="reviews" className="full-bleed bg-section-sage">
-          <div className="mx-auto max-w-[1200px] px-6 py-16">
-            <h2 className="display reveal-words max-w-xl text-3xl md:text-5xl">What our clients say.</h2>
-            <div className="mt-10 grid gap-6 md:grid-cols-3">
-              {reviews.map((r, i) => (
-                <div
-                  key={r.author}
-                  className="reveal flex flex-col justify-between border border-rule bg-background p-6 md:p-8"
-                  style={{ transitionDelay: `${i * 120}ms` }}
-                >
-                  <div>
-                    <Quote className="h-6 w-6 text-accent" />
-                    <p className="mt-4 text-base leading-relaxed text-ink">{r.quote}</p>
-                  </div>
-                  <div className="mt-8">
-                    <p className="text-sm font-semibold text-accent-green">{r.author}</p>
-                    <p className="text-xs text-ink-soft">{r.role}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-        
-
 
         
 
@@ -473,7 +482,7 @@ function Index() {
               <p className="mt-4 max-w-xs text-xs text-background/70">
                 Merciful Natural Resources Limited. Granite aggregates produced at Ilara-Mokin, Ondo State.
               </p>
-              <p className="mt-3 mono text-[10px] text-background/50">RC 1686282</p>
+              <p className="mt-3 mono text-[10px] text-background/50">CAC RC 1686282</p>
             </div>
             <div>
               <p className="mono text-[11px] uppercase text-background/60">Explore</p>
