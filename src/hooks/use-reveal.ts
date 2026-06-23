@@ -36,7 +36,9 @@ export function useReveal(selector = SELECTORS) {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
-            io.unobserve(entry.target);
+          } else {
+            // Optional: remove class to re-trigger animation on next scroll-in
+            entry.target.classList.remove("is-visible");
           }
         });
       },

@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Check, Quote } from "lucide-react";
 import heroImg from "@/assets/quarry-hero.jpg";
 import excavatorAsset from "@/assets/quarry-excavator.jpg.asset.json";
+import galleryImg from "@/gallery/ezgif-frame-003.jpg";
+import galleryVideo from "@/gallery/crop1.mp4";
 import cropVideo from "@/assets/crop1.mp4.asset.json";
 import productDust from "@/assets/product-dust.jpg";
 import product6mm from "@/assets/product-6mm.jpg";
@@ -151,9 +153,7 @@ function Index() {
               View product range
             </a>
           </div>
-          <div className="mono absolute bottom-4 right-6 bg-background/15 px-2 py-1 text-[10px] text-background/80 backdrop-blur">
-            MQ–01 · Ilara-Mokin pit
-          </div>
+
         </div>
       </section>
 
@@ -206,7 +206,7 @@ function Index() {
             </div>
             <div className="reveal-right img-zoom">
               <img
-                src={excavatorAsset.url}
+                src={galleryImg}
                 alt="Excavator loading granite into a haul truck at the Ilara-Mokin quarry pit"
                 width={1280}
                 height={720}
@@ -247,9 +247,9 @@ function Index() {
               muted
               loop
               playsInline
-              preload="metadata"
+              preload="auto"
             >
-              <source src={cropVideo.url} type="video/mp4" />
+              <source src={galleryVideo} type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/40 to-foreground/60" />
             <div className="relative mx-auto flex h-full max-w-[1200px] items-end px-6 pb-12">
@@ -408,6 +408,16 @@ function Index() {
           </div>
         </section>
         
+
+        {/* CALL TO ACTION — BRAND STATEMENT */}
+        <section className="full-bleed bg-section-sand py-32 flex flex-col items-center justify-center overflow-hidden">
+          <h2 
+            className="display reveal text-8xl font-bold tracking-tighter md:text-[200px] bg-clip-text text-transparent bg-cover bg-center"
+            style={{ backgroundImage: `url(${galleryImg})` }}
+          >
+            Built on Rock
+          </h2>
+        </section>
 
         {/* FOOTER */}
         <footer className="full-bleed bg-foreground text-background">
