@@ -1,8 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Check, Quote } from "lucide-react";
 import heroImg from "@/assets/quarry-hero.jpg";
-import plantImg from "@/assets/quarry-plant.jpg";
+import excavatorAsset from "@/assets/quarry-excavator.jpg.asset.json";
 import cropVideo from "@/assets/crop1.mp4.asset.json";
+import productDust from "@/assets/product-dust.jpg";
+import product6mm from "@/assets/product-6mm.jpg";
+import product13mm from "@/assets/product-13mm.jpg";
+import product19mm from "@/assets/product-19mm.jpg";
+import product25mm from "@/assets/product-25mm.jpg";
+import productRiprap from "@/assets/product-riprap.jpg";
 import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
@@ -26,12 +32,12 @@ const navLinks = [
 ];
 
 const products = [
-  { code: "0–5", title: "Granite Dust", desc: "Quarry fines for asphalt filler, block-work and base stabilisation." },
-  { code: "3/8″", title: "Chippings — 6mm", desc: "Fine concrete mixes, precast units, decorative finishes." },
-  { code: "1/2″", title: "Aggregate — 13mm", desc: "Standard concrete, ready-mix plants, mid-grade structural pours." },
-  { code: "3/4″", title: "Aggregate — 19mm", desc: "Heavy structural concrete, foundations, columns and slabs." },
-  { code: "1″", title: "Aggregate — 25mm", desc: "Mass concrete, drainage works and large-volume infrastructure." },
-  { code: "RIP-RAP", title: "Armour Stone", desc: "Slope protection, erosion control, marine and roadworks." },
+  { code: "0–5", title: "Granite Dust", desc: "Quarry fines for asphalt filler, block-work and base stabilisation.", img: productDust },
+  { code: "3/8″", title: "Chippings — 6mm", desc: "Fine concrete mixes, precast units, decorative finishes.", img: product6mm },
+  { code: "1/2″", title: "Aggregate — 13mm", desc: "Standard concrete, ready-mix plants, mid-grade structural pours.", img: product13mm },
+  { code: "3/4″", title: "Aggregate — 19mm", desc: "Heavy structural concrete, foundations, columns and slabs.", img: product19mm },
+  { code: "1″", title: "Aggregate — 25mm", desc: "Mass concrete, drainage works and large-volume infrastructure.", img: product25mm },
+  { code: "RIP-RAP", title: "Armour Stone", desc: "Slope protection, erosion control, marine and roadworks.", img: productRiprap },
 ];
 
 const pillars = [
@@ -78,7 +84,7 @@ const reviews = [
 function Index() {
   useReveal();
   return (
-    <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground">
       {/* HEADER */}
       <header className="sticky top-0 z-50 border-b border-rule bg-background/85 backdrop-blur">
         <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
@@ -123,12 +129,10 @@ function Index() {
           <p className="mono reveal text-xs text-background/70">
             Ilara-Mokin · Ondo State · Est. operations
           </p>
-          <h1 className="display reveal mt-6 max-w-[18ch] text-[44px] leading-[1.02] text-gradient-hero md:text-[88px]">
-            Granite, graded
-            <br />
-            to specification.
+          <h1 className="display reveal-words mt-6 max-w-[18ch] text-[40px] leading-[1.02] text-gradient-hero sm:text-[56px] md:text-[88px]">
+            Granite, graded to specification.
           </h1>
-          <p className="reveal mt-6 max-w-[52ch] text-base text-background/80 md:text-lg">
+          <p className="reveal mt-6 max-w-[52ch] text-sm text-background/80 sm:text-base md:text-lg">
             Merciful Natural Resources Limited produces half-a-million metric tons of granite
             aggregates a year — consistent, dispatched on time, and built for the projects that
             don't tolerate variance.
@@ -157,13 +161,17 @@ function Index() {
 
         {/* WHY MERCIFUL */}
         <section className="full-bleed bg-section-sand">
-          <div className="reveal mx-auto max-w-[1200px] px-6 py-14">
-            <h2 className="display max-w-2xl text-3xl md:text-5xl">
-              Four pillars behind every <span className="text-accent">tonne we dispatch.</span>
+          <div className="mx-auto max-w-[1200px] px-6 py-14">
+            <h2 className="display reveal-words max-w-2xl text-3xl md:text-5xl">
+              Four pillars behind every tonne we dispatch.
             </h2>
             <div className="mt-10 grid gap-px bg-rule md:grid-cols-2">
-              {pillars.map((p) => (
-                <div key={p.n} className="bg-background p-6 md:p-8">
+              {pillars.map((p, i) => (
+                <div
+                  key={p.n}
+                  className={`reveal bg-background p-6 md:p-8`}
+                  style={{ transitionDelay: `${i * 90}ms` }}
+                >
                   <div className="flex items-baseline gap-4">
                     <span className="mono text-xs text-accent">{p.n}</span>
                     <h3 className="text-lg font-semibold">{p.title}</h3>
@@ -177,44 +185,50 @@ function Index() {
         
 
         {/* OPERATIONS */}
-        <section id="operations" className="reveal py-14">
+        <section id="operations" className="py-14">
           <div className="grid gap-10 md:grid-cols-[1.1fr_1fr] md:items-center">
-            <div>
-              <h2 className="display text-3xl md:text-5xl">
-                From bedrock to <span className="text-accent">truck bed.</span>
+            <div className="reveal-left">
+              <h2 className="display reveal-words text-3xl md:text-5xl">
+                From bedrock to truck bed.
               </h2>
-              <p className="mt-4 max-w-md text-sm text-ink-soft">
+              <p className="reveal mt-4 max-w-md text-sm text-ink-soft">
                 A single, controlled chain — engineered so a 30-tonne haul leaves the plant the same way the last
                 thousand did.
               </p>
-              <div className="mt-8 flex flex-wrap items-center gap-2">
+              <div className="reveal mt-8 flex flex-wrap items-center gap-2">
                 {process.map((step, i) => (
                   <div key={step} className="flex items-center gap-2">
-                    <div className="border border-rule px-4 py-2 text-sm">{step}</div>
+                    <div className="border border-rule bg-background px-3 py-2 text-xs sm:px-4 sm:text-sm">{step}</div>
                     {i < process.length - 1 && <ArrowRight className="h-3.5 w-3.5 text-ink-soft" />}
                   </div>
                 ))}
               </div>
             </div>
-            <img
-              src={plantImg}
-              alt="Crushing plant and haul trucks in operation"
-              width={1280}
-              height={960}
-              loading="lazy"
-              className="aspect-[4/3] w-full object-cover"
-            />
+            <div className="reveal-right img-zoom">
+              <img
+                src={excavatorAsset.url}
+                alt="Excavator loading granite into a haul truck at the Ilara-Mokin quarry pit"
+                width={1280}
+                height={720}
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover"
+              />
+            </div>
           </div>
         </section>
         
 
         {/* BUYERS */}
         <section className="full-bleed bg-section-sage">
-          <div className="reveal mx-auto max-w-[1200px] px-6 py-14">
-            <h2 className="display max-w-xl text-3xl md:text-5xl">Who we supply.</h2>
-            <div className="mt-10 grid gap-px bg-rule md:grid-cols-4">
-              {buyers.map((b) => (
-                <div key={b.title} className="bg-background p-6">
+          <div className="mx-auto max-w-[1200px] px-6 py-14">
+            <h2 className="display reveal-words max-w-xl text-3xl md:text-5xl">Who we supply.</h2>
+            <div className="mt-10 grid gap-px bg-rule sm:grid-cols-2 md:grid-cols-4">
+              {buyers.map((b, i) => (
+                <div
+                  key={b.title}
+                  className="reveal-zoom bg-background p-6"
+                  style={{ transitionDelay: `${i * 80}ms` }}
+                >
                   <h3 className="text-sm font-semibold text-accent-green">{b.title}</h3>
                   <p className="mt-3 text-sm text-ink-soft">{b.desc}</p>
                 </div>
@@ -225,8 +239,8 @@ function Index() {
         
 
         {/* QUARRY IN MOTION */}
-        <section className="reveal relative isolate left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-foreground text-background">
-          <div className="h-[60vh] min-h-[420px] w-full">
+        <section className="full-bleed relative isolate overflow-hidden bg-foreground text-background">
+          <div className="relative h-[60vh] min-h-[420px] w-full">
             <video
               className="absolute inset-0 h-full w-full object-cover"
               autoPlay
@@ -240,8 +254,8 @@ function Index() {
             <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/40 to-foreground/60" />
             <div className="relative mx-auto flex h-full max-w-[1200px] items-end px-6 pb-12">
               <div className="max-w-xl">
-                <p className="mono text-xs uppercase tracking-widest text-background/70">Quarry in motion</p>
-                <h2 className="display mt-4 text-3xl leading-tight md:text-5xl">
+                <p className="mono reveal text-xs uppercase tracking-widest text-background/70">Quarry in motion</p>
+                <h2 className="display reveal-words mt-4 text-3xl leading-tight md:text-5xl">
                   Bedrock to baseline. Every blast, every load.
                 </h2>
               </div>
@@ -252,15 +266,19 @@ function Index() {
 
         {/* QUALITY */}
         <section id="quality" className="full-bleed bg-section-sand">
-          <div className="reveal mx-auto max-w-[1200px] px-6 py-14">
-            <h2 className="display max-w-2xl text-3xl md:text-5xl">Quality & certification.</h2>
-            <p className="mt-4 max-w-xl text-sm text-ink-soft">
+          <div className="mx-auto max-w-[1200px] px-6 py-14">
+            <h2 className="display reveal-words max-w-2xl text-3xl md:text-5xl">Quality & certification.</h2>
+            <p className="reveal mt-4 max-w-xl text-sm text-ink-soft">
               We operate under licensed mineral title and document compliance at every stage. Test certificates available
               on request for any active contract.
             </p>
-            <div className="mt-8 grid gap-3 md:grid-cols-3">
-              {certs.map((c) => (
-                <div key={c} className="flex items-start gap-3 border border-rule bg-background p-5">
+            <div className="mt-8 grid gap-3 sm:grid-cols-2 md:grid-cols-3">
+              {certs.map((c, i) => (
+                <div
+                  key={c}
+                  className="reveal flex items-start gap-3 border border-rule bg-background p-5"
+                  style={{ transitionDelay: `${i * 100}ms` }}
+                >
                   <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center bg-accent text-accent-foreground">
                     <Check className="h-3 w-3" />
                   </span>
@@ -324,11 +342,15 @@ function Index() {
 
         {/* CLIENT REVIEWS */}
         <section id="reviews" className="full-bleed bg-section-sage">
-          <div className="reveal mx-auto max-w-[1200px] px-6 py-16">
-            <h2 className="display max-w-xl text-3xl md:text-5xl">What our clients say.</h2>
+          <div className="mx-auto max-w-[1200px] px-6 py-16">
+            <h2 className="display reveal-words max-w-xl text-3xl md:text-5xl">What our clients say.</h2>
             <div className="mt-10 grid gap-6 md:grid-cols-3">
-              {reviews.map((r) => (
-                <div key={r.author} className="flex flex-col justify-between border border-rule bg-background p-6 md:p-8">
+              {reviews.map((r, i) => (
+                <div
+                  key={r.author}
+                  className="reveal flex flex-col justify-between border border-rule bg-background p-6 md:p-8"
+                  style={{ transitionDelay: `${i * 120}ms` }}
+                >
                   <div>
                     <Quote className="h-6 w-6 text-accent" />
                     <p className="mt-4 text-base leading-relaxed text-ink">{r.quote}</p>
@@ -346,24 +368,40 @@ function Index() {
 
         {/* PRODUCTS */}
         <section id="products" className="full-bleed bg-section-sand">
-          <div className="reveal mx-auto max-w-[1200px] px-6 py-14">
+          <div className="mx-auto max-w-[1200px] px-6 py-14">
             <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
-              <h2 className="display max-w-xl text-3xl md:text-5xl">
-                Granite by gradation — <span className="text-accent">six standards.</span>
+              <h2 className="display reveal-words max-w-xl text-3xl md:text-5xl">
+                Granite by gradation — six standards.
               </h2>
-              <p className="max-w-sm text-sm text-ink-soft">
+              <p className="reveal max-w-sm text-sm text-ink-soft">
                 Each grade is crushed, screened and stockpiled separately. Specify the size; we deliver it clean.
               </p>
             </div>
-            <div className="grid gap-px bg-rule md:grid-cols-3">
-              {products.map((p) => (
-                <article key={p.title} className="group bg-background p-6 transition-colors hover:bg-accent-soft/20">
-                  <div className="flex items-start justify-between">
-                    <span className="mono text-xs text-accent">{p.code}</span>
-                    <ArrowUpRight className="h-4 w-4 text-ink-soft transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            <div className="grid gap-px bg-rule sm:grid-cols-2 md:grid-cols-3">
+              {products.map((p, i) => (
+                <article
+                  key={p.title}
+                  className="reveal-zoom group flex flex-col bg-background transition-colors hover:bg-accent-soft/20"
+                  style={{ transitionDelay: `${i * 80}ms` }}
+                >
+                  <div className="img-zoom aspect-[4/3] w-full overflow-hidden">
+                    <img
+                      src={p.img}
+                      alt={`${p.title} — ${p.code} granite aggregate`}
+                      width={800}
+                      height={600}
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                    />
                   </div>
-                  <h3 className="display mt-8 text-2xl">{p.title}</h3>
-                  <p className="mt-3 text-sm text-ink-soft">{p.desc}</p>
+                  <div className="flex flex-1 flex-col p-6">
+                    <div className="flex items-start justify-between">
+                      <span className="mono text-xs text-accent">{p.code}</span>
+                      <ArrowUpRight className="h-4 w-4 text-ink-soft transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    </div>
+                    <h3 className="display mt-6 text-2xl">{p.title}</h3>
+                    <p className="mt-3 text-sm text-ink-soft">{p.desc}</p>
+                  </div>
                 </article>
               ))}
             </div>
